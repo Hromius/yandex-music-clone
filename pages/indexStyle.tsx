@@ -464,7 +464,7 @@ background-color: #00000052;
 width: 100%;
 height: 100%;
 `
-export const VideoElem = styled.div`
+export const VideoElem = styled.iframe`
 `
 export const VideoClose = styled.div`
 position: relative;

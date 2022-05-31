@@ -165,17 +165,16 @@ export const Slider = () => {
                             {!videoPreview ? "" : (
                                                 <VideoPreview onClick={()=> { setvideoPreview (false)}}>
                                                     
-                                                    <VideoElem>
-                                                    
-                                                    <iframe 
+                                                    <VideoElem
                                                     width={960} height={506}
-                                                    
-                                                    title='Youtube player'
-                                                    sandbox='allow-same-origin allow-forms allow-popups allow-scripts allow-presentation'
-                                                    src={`https://www.youtube.com/embed/LXb3EKWsInQ?autoplay=1`}>
-                                                    </iframe>
+                                                      src="https://www.youtube.com/embed/LXb3EKWsInQ"
+                                                     title="YouTube video player"
+                                                     frameBorder="0"
+                                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                     allowFullScreen>
+                                        
                                                     </VideoElem>
-                                                    <VideoClose><Image  src={close} alt="Find" width={15} height={15} onClick={()=> { setvideoPreview (false)}}/></VideoClose>
+                                                    <VideoClose><Image  src={close} alt="Find" width={10} height={10} onClick={()=> { setvideoPreview (false)}}/></VideoClose>
                                                 </VideoPreview> )}
                                                 
                             <SliderElement 
