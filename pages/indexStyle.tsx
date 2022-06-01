@@ -247,7 +247,7 @@ z-index:200;
 `
 export const SliderWindow = styled.div`
 position: relative;
-z-index: 200;
+z-index: 201;
 width: 100%;
 height: 1000px;
 display: flex;
@@ -301,6 +301,7 @@ export const DescriptionBoxSlide = styled.div`
 font-family: 'Roboto-Medium' , sans-serif;
 position: absolute;
 z-index: 220;
+width: 40%;
 color: white;
 left: 110px;
 top: 200px;
@@ -395,11 +396,13 @@ position: absolute;
 z-index: 390;
 top:230px;
 right: 110px;
-width: 825px;
-height: 465px;
+width: 40%;
+height: 37%;
 `
 export const CircleAnimation = styled.div`
-
+position: absolute;
+top:0px;
+left:0px;
   svg {
     
     height: 110px;
@@ -429,8 +432,20 @@ export const CircleAnimation = styled.div`
 }
 
 `
+export const ButtonPlay = styled.div`
+position:absolute;
+width :170px ;
+height: 56px;
+z-index: 999;
+bottom:400px;
+left:110px;
+
+cursor: pointer;
+`
+
 export const VideoLink = styled.div`
-position: absolute;
+position: relative;
+
 top:400px;
 right:570px;
 z-index: 390;
@@ -449,8 +464,9 @@ export const TextLink = styled(ImageLink)`
 position: absolute;
 color: white;
 font-size: 24px;
-top:285px;
-right: 340px;
+width: 140px;
+top:110px;
+left: -5px;
 z-index: 399;
 `
 

@@ -1,6 +1,6 @@
 import { useState,useEffect, useRef } from 'react'
 import Image from 'next/image'
-import{ SliderWrapper,SliderElement,SliderWindow,ArrowLeft, ArrowRight,VideoLink,VideoPreview,VideoElem, CircleAnimation,ImageLink,VideoClose,  ImgSlide,DescriptionBoxSlide,TextLink, TitleSlide,ButtonSlide,ButtonSlideIMG,VideoSlide, NameSlide,RatingSlide,RatingPointSlide,CastTextSlide, TextSlide,RatingIMDBtSlide, CastSlide, RatingTextSlide} from "./indexStyle"
+import{ SliderWrapper,SliderElement,SliderWindow,ArrowLeft, ArrowRight,VideoLink,VideoPreview,VideoElem,ButtonPlay, CircleAnimation,ImageLink,VideoClose,  ImgSlide,DescriptionBoxSlide,TextLink, TitleSlide,ButtonSlide,ButtonSlideIMG,VideoSlide, NameSlide,RatingSlide,RatingPointSlide,CastTextSlide, TextSlide,RatingIMDBtSlide, CastSlide, RatingTextSlide} from "./indexStyle"
 import {FaChevronLeft, FaChevronRight} from 'react-icons/fa'
 import { useSpring, animated as a } from "react-spring";
 
@@ -96,6 +96,10 @@ export const Slider = () => {
         shovFunc() 
     }
 
+    const arrowRight = ()=>{
+       return videoPreview ? "" : (<ArrowLeft><FaChevronLeft size={'1.5vw'} onClick={()=> left()}/></ArrowLeft>)
+    }
+
     if (nowNumberElement === newarr.length - 1 ){ 
         setTimeout(()=>{   
             setspeed (speed = 0)
@@ -145,7 +149,7 @@ export const Slider = () => {
 
         <SliderWrapper>
             
-            {videoPreview ? "" : (<ArrowLeft><FaChevronLeft size={'1.5vw'} onClick={()=> left()}/></ArrowLeft>)}
+            {arrowRight()}
 
                 <SliderWindow 
                     ref={windowRef}>
@@ -153,13 +157,17 @@ export const Slider = () => {
                         return (
                             <>
                             {!startShowVideo ? "" : 
-                                <VideoLink>
+                               <>
+                               <VideoLink>
                                 <CircleAnimation onClick={()=> { setvideoPreview (true)}}>
                                     <svg viewBox="0 0 80 80">
                                         <rect x="5" y="5" rx="55" ry="55" />
                                     </svg>
                                 </CircleAnimation>
                                 </VideoLink>
+                                <ButtonPlay onClick={()=> { setvideoPreview (true)}} />
+                               </> 
+                                
                             }
 
                             {!videoPreview ? "" : (
